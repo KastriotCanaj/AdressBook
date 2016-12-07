@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<ui:composition template="WEB-INF/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <ui:define name="title">Address Book</ui:define>
+
+    <ui:define name="content" >
+    
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+		        <h:form>
+	            	<div class="form-group">
+	                	<label>Firstname:</label>
+	                	<h:inputText value="#{addressViewController.firstname}" class="form-control"/>
+	                </div>
+	            	<div class="form-group">
+	                	<label>Lastname:</label>
+	                	<h:inputText value="#{addressViewController.lastname}" class="form-control"/>
+		            </div>
+	            	<div class="form-group">
+	                	<label>Phone number:</label>
+		                <h:inputText value="#{addressViewController.phoneNumber}" class="form-control"/>
+	                </div>
+	                <ui:fragment rendered="#{addressViewController.message.length()>0}">
+		                <div class="alert alert-info">
+		                	#{addressViewController.message}
+		                </div>
+	                </ui:fragment>
+	            	<div class="form-group">
+	                	<label></label>
+		                <h:commandButton action="#{addressViewController.saveAddress()}" value="save" class="btn btn-default"/>
+	                </div>
+		        </h:form>
+			</div>
+		</div>
+	</div>		
+
+    </ui:define>
+</ui:composition>

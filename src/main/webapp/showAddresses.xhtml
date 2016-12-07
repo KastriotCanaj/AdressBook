@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<ui:composition template="WEB-INF/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+                
+    <ui:define name="title">Address Book</ui:define>
+
+    <ui:define name="content" >
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8 col-xs-12">
+					<table class="table table-responsive">
+					<thead>
+						<tr>
+							<th>Lastname</th>
+							<th>Firstname</th>
+							<th>Phone number</th>
+						</tr>
+					</thead>
+					<tbody>
+			            <ui:repeat var="address" value="#{addressViewController.addresses}">
+							<tr>
+								<td>#{address.lastname}</td>
+								<td>#{address.firstname}</td>
+								<td>#{address.phonenumber}</td>
+							</tr>
+			            </ui:repeat>
+					</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+    </ui:define>
+</ui:composition>
