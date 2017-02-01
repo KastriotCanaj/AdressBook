@@ -13,7 +13,6 @@ import javax.annotation.PreDestroy;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Named;
 
-@Named("AddressDAO")
 @ApplicationScoped
 public class AddressDAO_Database implements AddressDAO {
 
@@ -74,7 +73,9 @@ public class AddressDAO_Database implements AddressDAO {
 				list.add(new Address(
 						entries.getInt("id"), entries.getString("firstname"),
 						entries.getString("lastname"), entries.getString("phonenumber"),
-						entries.getDate("registrationDate")));
+						entries.getDate("registrationDate"), entries.getString("ort"),
+						entries.getString("geschlecht"), entries.getString("email"),
+						entries.getString("kategorie")));
 			}
 			entries.close();
 			stmt.close();

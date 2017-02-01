@@ -17,6 +17,11 @@
 							<th>Lastname</th>
 							<th>Firstname</th>
 							<th>Phone number</th>
+							<th>Ort</th>
+							<th>Geschlecht</th>
+							<th>Email</th>
+							<th>Kategorie</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,6 +30,15 @@
 								<td>#{address.lastname}</td>
 								<td>#{address.firstname}</td>
 								<td>#{address.phonenumber}</td>
+								<td>#{address.ort}</td>
+								<td>#{address.geschlecht}</td>
+								<td>#{address.email}</td>
+								<td>#{address.kategorie}</td>
+								<td>
+									<h:form>
+										<h:commandLink action="#{addressViewController.tuDerBearbeiten(address)}" value="TU der BEARPEITEN" />
+									</h:form>
+								</td>
 							</tr>
 			            </ui:repeat>
 					</tbody>
